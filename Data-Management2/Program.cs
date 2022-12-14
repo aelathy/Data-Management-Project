@@ -52,7 +52,9 @@ while (logInLoop)
             Console.WriteLine("4. Add Product to Shopping Cart");
             Console.WriteLine("5. Remove Product from Shopping Cart");
             Console.WriteLine("6. Display Shopping Cart");
-            Console.WriteLine("7. Exit");
+            Console.WriteLine("7. Register New Account");
+            Console.WriteLine("8. Delete Account");
+            Console.WriteLine("9. Exit");
             string menuOption = Console.ReadLine().ToLower();
             Console.WriteLine();
 
@@ -192,7 +194,37 @@ while (logInLoop)
             }
             else if (menuOption == "7")
             {
+                bool usernameMatch = false;
+                Console.WriteLine("Please enter the username & password of the accont you want to enter.");
+                Console.WriteLine();
+                Console.WriteLine("Username: ");
+                string newUsernameInput = Console.ReadLine();
+                Console.WriteLine("Password: ");
+                string newPasswordInput = Console.ReadLine();
+                foreach (User user in users)
+                {
+                    if (user.Username == newUsernameInput)
+                    {
+                        usernameMatch = true;
+                    }
+                }
+                if (!usernameMatch)
+                {
+                    users.Add(new User(newUsernameInput, newPasswordInput));
+                }
+                else
+                {
+                    Console.WriteLine("Username is already in use.");
+                }
+            }
+            else if (menuOption == "8")
+            {
+
+            }
+            else if (menuOption == "9")
+            {
                 break;
+
             }
         }
     }
