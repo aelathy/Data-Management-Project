@@ -1,5 +1,4 @@
-﻿
-// Data Management Project
+﻿// Data Management Project
 #nullable disable
 using System.Text.Json;
 Console.Clear();
